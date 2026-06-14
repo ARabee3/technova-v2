@@ -75,7 +75,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-white/10 pt-24 pb-32">
       {/* Background Grid */}
-      <div className="absolute inset-0 z-0 bg-blueprint"></div>
+      <div className="absolute inset-0 z-0 bg-blueprint pointer-events-none"></div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-2 lg:gap-8">
         <FadeIn className="flex flex-col justify-center">
@@ -420,7 +420,7 @@ function Portfolio() {
                       fill
                       className="object-cover mix-blend-luminosity opacity-80 transition-all duration-700 group-hover:mix-blend-normal group-hover:opacity-100"
                     />
-                    <div className="absolute inset-0 bg-base/20 transition-opacity duration-500 group-hover:opacity-0"></div>
+                    <div className="absolute inset-0 bg-base/20 transition-opacity duration-500 group-hover:opacity-0 pointer-events-none"></div>
 
                     {/* Metric Badge */}
                     <div className="absolute top-4 left-4 border border-white/20 bg-base/80 backdrop-blur-md px-4 py-2 font-mono text-xs font-semibold text-accent">
