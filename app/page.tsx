@@ -91,14 +91,14 @@ function Hero() {
             drive revenue, streamline operations, and elevate your brand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="group relative flex h-14 items-center justify-center gap-3 overflow-hidden border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98]">
+            <a href="#contact" className="group relative flex h-14 items-center justify-center gap-3 overflow-hidden border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98]">
               <span className="relative z-10">START YOUR PROJECT</span>
               <kbd className="relative z-10 hidden sm:inline-flex items-center justify-center h-5 w-5 rounded border border-accent/40 bg-accent/10 font-sans text-[10px] transition-colors group-hover:border-base/40 group-hover:bg-base/10">C</kbd>
               <div className="absolute inset-0 -z-10 bg-accent/20 blur-md opacity-0 transition-opacity group-hover:opacity-100"></div>
-            </button>
-            <button className="flex h-14 items-center justify-center px-8 text-sm font-medium text-muted transition-all hover:text-ink active:scale-[0.98]">
+            </a>
+            <a href="#portfolio" className="flex h-14 items-center justify-center px-8 text-sm font-medium text-muted transition-all hover:text-ink active:scale-[0.98]">
               VIEW CASE STUDIES
-            </button>
+            </a>
           </div>
 
           <div className="mt-24 border-t border-white/10 pt-6">
@@ -384,7 +384,7 @@ function Portfolio() {
               FEATURED CASE STUDIES
             </h2>
           </div>
-          <button className="hidden md:flex items-center gap-2 text-sm font-medium text-accent hover:text-white transition-colors mt-6 md:mt-0">
+          <a href="#portfolio" className="hidden md:flex items-center gap-2 text-sm font-medium text-accent hover:text-white transition-colors mt-6 md:mt-0">
             VIEW ALL WORK
             <svg
               className="h-4 w-4"
@@ -399,7 +399,7 @@ function Portfolio() {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </button>
+          </a>
         </FadeIn>
         <div className="grid gap-12 md:grid-cols-2">
           {works.map((work, i) => {
