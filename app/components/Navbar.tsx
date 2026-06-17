@@ -4,69 +4,107 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Close menu when clicking escape
+  // Close menu on escape, handle scroll state
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMenuOpen(false);
     };
+    
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
     window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    handleScroll(); // Init
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-base/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm -my-6 md:-my-8 -ml-4 md:-ml-6" onClick={() => setIsMenuOpen(false)}>
-          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-20 md:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105" priority />
-        </a>
-        
-        <nav className="flex items-center gap-4 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="px-2 py-2 hover:text-ink transition-colors uppercase tracking-widest block">
+    <>
+      <header className="fixed top-0 inset-x-0 z-50 flex justify-center p-4 md:p-6 pointer-events-none">
+        {/* Floating Pill Container */}
+        <div 
+          className={`
+            pointer-events-auto flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-3 
+            rounded-full border transition-all duration-500 ease-out
+            ${isScrolled 
+              ? "bg-base/80 backdrop-blur-xl border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]" 
+              : "bg-transparent border-transparent"
+            }
+          `}
+        >
+          {/* Logo Container - Carefully scaled and cropped to avoid layout stretching */}
+          <a 
+            href="#" 
+            className="group relative flex h-8 w-28 md:w-32 items-center justify-center overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Technova Home"
+          >
+            <Image 
+              src="/logo.png" 
+              alt="Technova Logo" 
+              width={1258} 
+              height={879} 
+              className="absolute max-w-none w-[180px] md:w-[200px] h-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+              priority 
+            />
+          </a>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1 text-[11px] font-mono uppercase tracking-widest text-muted">
+            <a href="#services" className="px-4 py-2 rounded-full hover:text-ink hover:bg-white/5 transition-colors">
               Services
             </a>
-            <a href="#process" className="px-2 py-2 hover:text-ink transition-colors uppercase tracking-widest block">
+            <a href="#process" className="px-4 py-2 rounded-full hover:text-ink hover:bg-white/5 transition-colors">
               Process
             </a>
-            <a href="#portfolio" className="px-2 py-2 hover:text-ink transition-colors uppercase tracking-widest block">
+            <a href="#portfolio" className="px-4 py-2 rounded-full hover:text-ink hover:bg-white/5 transition-colors">
               Portfolio
             </a>
-            <a href="#about" className="px-2 py-2 hover:text-ink transition-colors uppercase tracking-widest block">
+            <a href="#about" className="px-4 py-2 rounded-full hover:text-ink hover:bg-white/5 transition-colors">
               About
             </a>
-          </div>
-          
-          <a href="#contact" className="flex items-center gap-2 px-2 py-2 hover:text-accent transition-colors uppercase tracking-widest text-ink group relative z-50" onClick={() => setIsMenuOpen(false)}>
-            <span>Contact</span>
-            <kbd className="hidden lg:inline-flex items-center justify-center h-5 w-5 rounded border border-white/20 bg-white/5 font-sans text-[9px] text-muted transition-colors group-hover:border-accent/50 group-hover:text-accent">
-              C
-            </kbd>
-          </a>
+          </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden relative z-50 p-2 text-white hover:text-accent transition-colors focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Menu"
-            aria-expanded={isMenuOpen}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </nav>
-      </div>
+          {/* CTA & Mobile Toggle */}
+          <div className="flex items-center gap-2">
+            <a 
+              href="#contact" 
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/50 transition-all text-[11px] font-mono uppercase tracking-widest text-ink group"
+            >
+              <span>Contact</span>
+              <div className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+            </a>
+
+            {/* Mobile Hamburger */}
+            <button 
+              className="md:hidden p-2 text-muted hover:text-ink transition-colors focus:outline-none rounded-full hover:bg-white/5"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMenuOpen ? (
+                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1.5} d="M4 7h16M4 12h16M4 17h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-base/95 backdrop-blur-xl border-b border-white/10 md:hidden flex flex-col items-center justify-center gap-8 font-mono text-xs uppercase tracking-widest text-muted">
+        <div className="fixed inset-0 z-40 bg-base/98 backdrop-blur-3xl md:hidden flex flex-col items-center justify-center gap-8 font-mono text-sm uppercase tracking-widest text-muted">
           <a href="#services" className="p-4 hover:text-accent transition-colors w-full text-center" onClick={() => setIsMenuOpen(false)}>
             Services
           </a>
@@ -79,8 +117,11 @@ export function Navbar() {
           <a href="#about" className="p-4 hover:text-accent transition-colors w-full text-center" onClick={() => setIsMenuOpen(false)}>
             About
           </a>
+          <a href="#contact" className="mt-8 px-8 py-4 rounded-full border border-accent/30 text-accent hover:bg-accent/10 transition-colors" onClick={() => setIsMenuOpen(false)}>
+            Get in touch
+          </a>
         </div>
       )}
-    </header>
+    </>
   );
 }
