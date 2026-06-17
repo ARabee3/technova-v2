@@ -121,30 +121,32 @@ function Hero() {
 
 function TrustedBy() {
   const brands = [
-    <span key="1" className="text-xl font-bold tracking-tighter">ACME CORP</span>,
-    <span key="2" className="text-xl font-bold tracking-tight">VANGUARD</span>,
-    <span key="3" className="text-xl font-bold tracking-widest">NEXUS</span>,
-    <span key="4" className="text-xl font-bold italic">Horizon</span>,
-    <span key="5" className="text-xl font-bold uppercase">Quantum</span>,
+    <span key="1" className="text-xl font-bold tracking-tighter whitespace-nowrap">ACME CORP</span>,
+    <span key="2" className="text-xl font-bold tracking-tight whitespace-nowrap">VANGUARD</span>,
+    <span key="3" className="text-xl font-bold tracking-widest whitespace-nowrap">NEXUS</span>,
+    <span key="4" className="text-xl font-bold italic whitespace-nowrap">Horizon</span>,
+    <span key="5" className="text-xl font-bold uppercase whitespace-nowrap">Quantum</span>,
   ];
 
   return (
     <section className="border-b border-white/10 py-12 bg-surface/5 overflow-hidden">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-6 mb-8">
         <FadeIn>
-          <p className="text-center font-mono text-[10px] text-muted uppercase tracking-widest mb-8">
+          <p className="text-center font-mono text-[10px] text-muted uppercase tracking-widest">
             Trusted by innovative companies worldwide
           </p>
-          <div className="flex overflow-hidden opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-            <div className="flex motion-safe:animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center">
-              {brands}
-            </div>
-            <div className="flex motion-safe:animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center" aria-hidden="true">
-              {brands}
-            </div>
-          </div>
         </FadeIn>
       </div>
+      <FadeIn delay={100}>
+        <div className="flex overflow-hidden opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] w-full">
+          <div className="flex motion-safe:animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center py-2">
+            {brands}
+          </div>
+          <div className="flex motion-safe:animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center py-2" aria-hidden="true">
+            {brands}
+          </div>
+        </div>
+      </FadeIn>
     </section>
   );
 }
