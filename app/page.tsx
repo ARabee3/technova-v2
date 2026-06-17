@@ -7,7 +7,7 @@ function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-base/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm">
-          <Image src="/logo.png" alt="Technova Logo" width={400} height={400} className="h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105" priority />
         </a>
         <nav className="flex items-center gap-6 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
           <div className="hidden md:flex items-center gap-10">
@@ -577,7 +577,7 @@ function Footer() {
     <footer className="relative py-8 bg-base/50">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center">
-          <Image src="/logo.png" alt="Technova Logo" width={300} height={300} className="h-10 w-auto object-contain grayscale contrast-200 brightness-200 opacity-90" />
+          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-14 w-auto object-contain grayscale contrast-200 brightness-200 opacity-90" />
         </div>
         
         <div className="flex items-center gap-6 font-mono text-[10px] text-muted uppercase tracking-widest">
