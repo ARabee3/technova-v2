@@ -7,7 +7,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Close menu on escape, handle scroll state
+  // Close menu on escape, handle scroll state, and lock body scroll when menu is open
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMenuOpen(false);
@@ -26,6 +26,18 @@ export function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Body scroll lock effect
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -86,9 +98,11 @@ export function Navbar() {
 
             {/* Mobile Hamburger */}
             <button 
-              className="md:hidden p-2 text-muted hover:text-ink transition-colors focus:outline-none rounded-full hover:bg-white/5"
+              className="md:hidden p-3 -mr-2 text-muted hover:text-ink transition-colors focus:outline-none rounded-full hover:bg-white/5"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle Menu"
+              aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -104,7 +118,10 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-base/98 backdrop-blur-3xl md:hidden flex flex-col items-center justify-center gap-8 font-mono text-sm uppercase tracking-widest text-muted">
+        <div 
+          id="mobile-menu"
+          className="fixed inset-0 z-40 bg-base/98 backdrop-blur-3xl md:hidden flex flex-col items-center justify-center gap-8 font-mono text-sm uppercase tracking-widest text-muted"
+        >
           <a href="#services" className="p-4 hover:text-accent transition-colors w-full text-center" onClick={() => setIsMenuOpen(false)}>
             Services
           </a>
