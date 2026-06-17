@@ -6,9 +6,8 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-base/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#" className="flex items-center gap-3 font-bold tracking-tight text-ink group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm">
-          <Image src="/logo.png" alt="Technova Logo" width={32} height={32} className="object-contain transition-transform duration-500 group-hover:scale-110" />
-          <span className="text-xl">TECHNOVA</span>
+        <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm">
+          <Image src="/logo.png" alt="Technova Logo" width={400} height={400} className="h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
         </a>
         <nav className="flex items-center gap-6 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
           <div className="hidden md:flex items-center gap-10">
@@ -577,9 +576,8 @@ function Footer() {
   return (
     <footer className="relative py-8 bg-base/50">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-3 font-bold tracking-tight text-ink">
-          <Image src="/logo.png" alt="Technova Logo" width={24} height={24} className="object-contain grayscale contrast-200 brightness-200" />
-          <span className="text-sm">TECHNOVA</span>
+        <div className="flex items-center">
+          <Image src="/logo.png" alt="Technova Logo" width={300} height={300} className="h-10 w-auto object-contain grayscale contrast-200 brightness-200 opacity-90" />
         </div>
         
         <div className="flex items-center gap-6 font-mono text-[10px] text-muted uppercase tracking-widest">
