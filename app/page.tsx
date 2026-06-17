@@ -188,19 +188,28 @@ function Hero() {
 }
 
 function TrustedBy() {
+  const brands = [
+    <span key="1" className="text-xl font-bold tracking-tighter">ACME CORP</span>,
+    <span key="2" className="text-xl font-bold tracking-tight">VANGUARD</span>,
+    <span key="3" className="text-xl font-bold tracking-widest">NEXUS</span>,
+    <span key="4" className="text-xl font-bold italic">Horizon</span>,
+    <span key="5" className="text-xl font-bold uppercase">Quantum</span>,
+  ];
+
   return (
-    <section className="border-b border-white/10 py-12 bg-surface/5">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="border-b border-white/10 py-12 bg-surface/5 overflow-hidden">
+      <div className="mx-auto max-w-7xl">
         <FadeIn>
           <p className="text-center font-mono text-[10px] text-muted uppercase tracking-widest mb-8">
             Trusted by innovative companies worldwide
           </p>
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-12 md:gap-24 opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70">
-            <div className="text-xl font-bold tracking-tighter">ACME CORP</div>
-            <div className="text-xl font-bold tracking-tight">VANGUARD</div>
-            <div className="text-xl font-bold tracking-widest">NEXUS</div>
-            <div className="text-xl font-bold italic">Horizon</div>
-            <div className="text-xl font-bold uppercase">Quantum</div>
+          <div className="flex overflow-hidden opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div className="flex animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center">
+              {brands}
+            </div>
+            <div className="flex animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center" aria-hidden="true">
+              {brands}
+            </div>
           </div>
         </FadeIn>
       </div>
@@ -560,55 +569,73 @@ function About() {
   );
 }
 
-function Footer() {
+function Contact() {
   return (
-    <footer id="contact" className="relative py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 grid gap-20 lg:grid-cols-2">
-        <FadeIn className="border-l-2 border-accent pl-6 flex flex-col justify-between">
+    <section id="contact" className="relative py-24 md:py-32 border-b border-white/10">
+      <div className="mx-auto max-w-7xl px-6 grid gap-16 lg:grid-cols-2">
+        <FadeIn className="border-l-2 border-accent pl-6 flex flex-col justify-center">
           <div>
             <h2 className="mb-8 text-4xl font-semibold tracking-tight md:text-5xl">
               LET&apos;S BUILD SOMETHING EXCEPTIONAL.
             </h2>
-            <p className="mb-12 max-w-md text-base leading-relaxed text-muted">
+            <p className="max-w-md text-base leading-relaxed text-muted">
               Whether you are launching a new startup or scaling an enterprise
               platform, our engineering team is ready to execute your vision.
               Reach out to discuss your requirements.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-3 font-mono text-[10px] text-muted uppercase tracking-widest">
-            <div className="flex items-center gap-6 mb-4">
-              <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="LinkedIn">
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </a>
-              <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="X (Twitter)">
-                <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="Facebook">
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
-            <div className="flex gap-4">
-              <span className="text-white/40 w-8">LOC</span> EGYPT
-            </div>
-            <div className="flex gap-4">
-              <span className="text-white/40 w-8">SYS</span> ONLINE
-            </div>
-            <div className="mt-8 text-white/20">
-              © {new Date().getFullYear()} TECHNOVA DIGITAL STUDIO.
-            </div>
           </div>
         </FadeIn>
 
         <FadeIn delay={200}>
           <ContactForm />
         </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="relative py-8 bg-base/50">
+      <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-3 font-bold tracking-tight text-ink">
+          <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+            <rect x="2" y="4" width="6" height="4" className="fill-accent opacity-50" />
+            <rect x="16" y="4" width="6" height="4" className="fill-accent opacity-50" />
+            <rect x="10" y="4" width="4" height="16" className="fill-accent" />
+          </svg>
+          <span className="text-sm">TECHNOVA</span>
+        </div>
+        
+        <div className="flex items-center gap-6 font-mono text-[10px] text-muted uppercase tracking-widest">
+          <div className="flex items-center gap-4 border-r border-white/10 pr-6 hidden sm:flex">
+            <span className="text-white/40">LOC</span> EGYPT
+          </div>
+          <div className="flex items-center gap-4 border-r border-white/10 pr-6 hidden sm:flex">
+            <span className="text-white/40">SYS</span> ONLINE
+          </div>
+          <div className="text-white/20">
+            © {new Date().getFullYear()} TECHNOVA.
+          </div>
+        </div>
+
+        <div className="flex items-center gap-6">
+          <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="LinkedIn">
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="X (Twitter)">
+            <svg className="h-[15px] w-[15px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="Facebook">
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+            </svg>
+          </a>
+        </div>
       </div>
     </footer>
   );
@@ -617,14 +644,21 @@ function Footer() {
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col selection:bg-accent selection:text-base bg-base text-ink font-sans">
+      <svg className="pointer-events-none fixed inset-0 z-[100] h-full w-full opacity-[0.04] mix-blend-overlay">
+        <filter id="noise">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)" />
+      </svg>
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <Hero />
         <TrustedBy />
         <Services />
         <Process />
         <Portfolio />
         <About />
+        <Contact />
       </main>
       <Footer />
     </div>
