@@ -7,28 +7,7 @@ function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-base/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a href="#" className="flex items-center gap-3 font-bold tracking-tight text-ink group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 transition-transform duration-500 group-hover:scale-110"
-          >
-            <rect
-              x="2"
-              y="4"
-              width="6"
-              height="4"
-              className="fill-accent opacity-50 transition-opacity duration-500 group-hover:opacity-100"
-            />
-            <rect
-              x="16"
-              y="4"
-              width="6"
-              height="4"
-              className="fill-accent opacity-50 transition-opacity duration-500 group-hover:opacity-100"
-            />
-            <rect x="10" y="4" width="4" height="16" className="fill-accent" />
-          </svg>
+          <Image src="/logo.png" alt="Technova Logo" width={32} height={32} className="object-contain transition-transform duration-500 group-hover:scale-110" />
           <span className="text-xl">TECHNOVA</span>
         </a>
         <nav className="flex items-center gap-6 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
@@ -599,11 +578,7 @@ function Footer() {
     <footer className="relative py-8 bg-base/50">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3 font-bold tracking-tight text-ink">
-          <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
-            <rect x="2" y="4" width="6" height="4" className="fill-accent opacity-50" />
-            <rect x="16" y="4" width="6" height="4" className="fill-accent opacity-50" />
-            <rect x="10" y="4" width="4" height="16" className="fill-accent" />
-          </svg>
+          <Image src="/logo.png" alt="Technova Logo" width={24} height={24} className="object-contain grayscale contrast-200 brightness-200" />
           <span className="text-sm">TECHNOVA</span>
         </div>
         
