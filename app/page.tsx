@@ -468,14 +468,14 @@ function Portfolio() {
         </FadeIn>
         
         {/* Asymmetric Scattered Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12 items-center">
           {/* Work 0: Massive Feature (Spans 8 cols) */}
           <FadeIn delay={0} className="md:col-span-8">
             {renderWorkCard(works[0], "aspect-[4/3] md:aspect-[21/9]")}
           </FadeIn>
 
-          {/* Work 1: Portrait Offset (Spans 4 cols, pushed down) */}
-          <FadeIn delay={150} className="md:col-span-4 md:mt-32">
+          {/* Work 1: Portrait Offset (Spans 4 cols) */}
+          <FadeIn delay={150} className="md:col-span-4">
             {renderWorkCard(works[1], "aspect-[4/3] md:aspect-[3/4]")}
           </FadeIn>
 
@@ -484,8 +484,8 @@ function Portfolio() {
             {renderWorkCard(works[2], "aspect-[4/3] md:aspect-square")}
           </FadeIn>
 
-          {/* Work 3: Wide Layout (Spans 7 cols, pulled up to interlock) */}
-          <FadeIn delay={450} className="md:col-span-7 md:-mt-24">
+          {/* Work 3: Wide Layout (Spans 7 cols) */}
+          <FadeIn delay={450} className="md:col-span-7">
             {renderWorkCard(works[3], "aspect-[4/3] md:aspect-[16/9]")}
           </FadeIn>
         </div>
