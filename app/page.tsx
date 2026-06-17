@@ -78,6 +78,9 @@ function Hero() {
     <section className="relative overflow-hidden border-b border-white/10 pt-24 pb-32">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 bg-blueprint pointer-events-none"></div>
+      
+      {/* Ambient Glow */}
+      <div className="ambient-glow w-[600px] h-[600px] top-0 right-0 -translate-y-1/2 translate-x-1/3"></div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-2 lg:gap-8">
         <FadeIn className="flex flex-col justify-center">
@@ -374,22 +377,73 @@ function Portfolio() {
     },
   ];
 
+  // Helper function to render a single work card
+  const renderWorkCard = (work: typeof works[0], aspectClass: string) => (
+    <div className="group relative flex flex-col gap-6 cursor-pointer h-full">
+      <div className={`relative w-full overflow-hidden border border-white/10 bg-surface/20 transition-all duration-700 group-hover:border-accent/40 group-hover:shadow-[0_0_30px_rgba(0,255,255,0.1)] ${aspectClass}`}>
+        <Image
+          src={work.image}
+          alt={work.title}
+          fill
+          className="object-cover mix-blend-luminosity opacity-80 transition-all duration-700 group-hover:mix-blend-normal group-hover:opacity-100"
+        />
+        <div className="absolute inset-0 bg-base/20 transition-opacity duration-500 group-hover:opacity-0 pointer-events-none"></div>
+
+        {/* Metric Badge */}
+        <div className="absolute top-4 left-4 border border-white/20 bg-base/80 backdrop-blur-md px-4 py-2 font-mono text-xs font-semibold text-accent transition-colors duration-500 group-hover:border-accent/50 group-hover:bg-base/90">
+          {work.metric}
+        </div>
+      </div>
+      <div className="flex items-center justify-between border-t border-white/10 pt-4 transition-colors duration-500 group-hover:border-accent/30">
+        <div>
+          <h3 className="text-lg font-medium tracking-tight group-hover:text-white transition-colors duration-300">
+            {work.title}
+          </h3>
+          <p className="font-mono text-xs text-muted uppercase tracking-wider mt-1">
+            {work.type}
+          </p>
+        </div>
+        <div className="flex h-10 w-10 items-center justify-center border border-white/10 transition-colors duration-500 group-hover:border-accent group-hover:bg-accent/10">
+          <svg
+            className="h-4 w-4 text-white transition-colors duration-500 group-hover:text-accent"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="square"
+              strokeLinejoin="miter"
+              strokeWidth={1.5}
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section
       id="portfolio"
-      className="relative border-b border-white/10 py-24 md:py-32"
+      className="relative border-b border-white/10 py-24 md:py-32 overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      {/* Deep Atmospheric Glow */}
+      <div className="ambient-glow w-[800px] h-[800px] top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+      
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <FadeIn className="mb-20 border-l-2 border-accent pl-6 flex flex-col md:flex-row md:items-end justify-between">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
               FEATURED CASE STUDIES
             </h2>
           </div>
-          <a href="#portfolio" className="hidden md:flex items-center gap-2 text-sm font-medium text-accent hover:text-white transition-colors mt-6 md:mt-0">
-            VIEW ALL WORK
+          <a href="#portfolio" className="hidden md:flex items-center gap-2 text-sm font-medium text-accent hover:text-white transition-colors mt-6 md:mt-0 group">
+            <span className="relative">
+              VIEW ALL WORK
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+            </span>
             <svg
-              className="h-4 w-4"
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -403,61 +457,28 @@ function Portfolio() {
             </svg>
           </a>
         </FadeIn>
-        <div className="grid gap-12 md:grid-cols-2">
-          {works.map((work, i) => {
-            const isFeatured = i === 0 || i === works.length - 1;
-            return (
-              <FadeIn
-                key={work.id}
-                delay={i * 150}
-                className={isFeatured ? "md:col-span-2" : ""}
-              >
-                <div className="group relative flex flex-col gap-6 cursor-pointer h-full">
-                  <div
-                    className={`relative w-full overflow-hidden border border-white/10 bg-surface/20 ${isFeatured ? "aspect-[16/9] md:aspect-[21/9]" : "aspect-[4/3] md:aspect-[16/9]"}`}
-                  >
-                    <Image
-                      src={work.image}
-                      alt={work.title}
-                      fill
-                      className="object-cover mix-blend-luminosity opacity-80 transition-all duration-700 group-hover:mix-blend-normal group-hover:opacity-100"
-                    />
-                    <div className="absolute inset-0 bg-base/20 transition-opacity duration-500 group-hover:opacity-0 pointer-events-none"></div>
+        
+        {/* Asymmetric Scattered Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12">
+          {/* Work 0: Massive Feature (Spans 8 cols) */}
+          <FadeIn delay={0} className="md:col-span-8">
+            {renderWorkCard(works[0], "aspect-[4/3] md:aspect-[21/9]")}
+          </FadeIn>
 
-                    {/* Metric Badge */}
-                    <div className="absolute top-4 left-4 border border-white/20 bg-base/80 backdrop-blur-md px-4 py-2 font-mono text-xs font-semibold text-accent">
-                      {work.metric}
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
-                    <div>
-                      <h3 className="text-lg font-medium tracking-tight">
-                        {work.title}
-                      </h3>
-                      <p className="font-mono text-xs text-muted uppercase tracking-wider mt-1">
-                        {work.type}
-                      </p>
-                    </div>
-                    <div className="flex h-10 w-10 items-center justify-center border border-white/10 transition-colors group-hover:border-accent group-hover:bg-accent/10">
-                      <svg
-                        className="h-4 w-4 text-white transition-colors group-hover:text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="square"
-                          strokeLinejoin="miter"
-                          strokeWidth={1.5}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            );
-          })}
+          {/* Work 1: Portrait Offset (Spans 4 cols, pushed down) */}
+          <FadeIn delay={150} className="md:col-span-4 md:mt-32">
+            {renderWorkCard(works[1], "aspect-[4/3] md:aspect-[3/4]")}
+          </FadeIn>
+
+          {/* Work 2: Square/Landscape (Spans 5 cols) */}
+          <FadeIn delay={300} className="md:col-span-5">
+            {renderWorkCard(works[2], "aspect-[4/3] md:aspect-square")}
+          </FadeIn>
+
+          {/* Work 3: Wide Layout (Spans 7 cols, pulled up to interlock) */}
+          <FadeIn delay={450} className="md:col-span-7 md:-mt-24">
+            {renderWorkCard(works[3], "aspect-[4/3] md:aspect-[16/9]")}
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -468,9 +489,12 @@ function About() {
   return (
     <section
       id="about"
-      className="relative border-b border-white/10 py-24 md:py-32 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.03),transparent_50%)]"
+      className="relative border-b border-white/10 py-24 md:py-32 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.03),transparent_50%)] overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      {/* Ambient Glow */}
+      <div className="ambient-glow w-[500px] h-[500px] bottom-0 right-0 translate-y-1/3 translate-x-1/3 opacity-20"></div>
+
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid gap-20 lg:grid-cols-2">
           <FadeIn className="flex flex-col justify-center border-l-2 border-accent pl-6">
             <h2 className="mb-8 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
