@@ -531,7 +531,7 @@ function Footer() {
     <footer className="relative py-8 bg-base/50">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center">
-          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-14 w-auto object-contain grayscale contrast-200 brightness-200 opacity-90" />
+          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-20 md:h-24 w-auto object-contain grayscale contrast-200 brightness-200 opacity-90 md:-ml-6" />
         </div>
         
         <div className="flex items-center gap-6 font-mono text-[10px] text-muted uppercase tracking-widest">
