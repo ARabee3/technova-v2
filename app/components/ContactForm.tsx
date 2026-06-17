@@ -59,7 +59,7 @@ export function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="flex flex-col items-center justify-center gap-6 bg-surface/10 p-10 border border-white/10 backdrop-blur-sm h-full text-center" aria-live="polite">
+      <div className="flex flex-col items-center justify-center gap-6 bg-surface/10 p-6 md:p-10 border border-white/10 backdrop-blur-sm h-full text-center" aria-live="polite">
         <div className="h-16 w-16 border border-accent flex items-center justify-center text-accent mb-4">
           <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -78,7 +78,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-8 bg-surface/10 p-10 border border-white/10 backdrop-blur-sm h-full relative overflow-hidden">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-8 bg-surface/10 p-6 md:p-10 border border-white/10 backdrop-blur-sm h-full relative overflow-hidden">
       {/* Loading overlay */}
       {isSubmitting && (
         <div className="absolute inset-0 z-10 bg-base/80 backdrop-blur-md flex flex-col items-center justify-center border border-accent/20">
