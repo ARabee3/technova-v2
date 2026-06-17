@@ -31,31 +31,33 @@ function Navbar() {
           </svg>
           <span className="text-xl">TECHNOVA</span>
         </a>
-        <nav className="hidden md:flex items-center gap-10 text-xs font-mono text-muted">
-          <a
-            href="#services"
-            className="hover:text-ink transition-colors uppercase tracking-widest"
-          >
-            Services
-          </a>
-          <a
-            href="#process"
-            className="hover:text-ink transition-colors uppercase tracking-widest"
-          >
-            Process
-          </a>
-          <a
-            href="#portfolio"
-            className="hover:text-ink transition-colors uppercase tracking-widest"
-          >
-            Portfolio
-          </a>
-          <a
-            href="#about"
-            className="hover:text-ink transition-colors uppercase tracking-widest"
-          >
-            About
-          </a>
+        <nav className="flex items-center gap-6 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
+          <div className="hidden md:flex items-center gap-10">
+            <a
+              href="#services"
+              className="hover:text-ink transition-colors uppercase tracking-widest"
+            >
+              Services
+            </a>
+            <a
+              href="#process"
+              className="hover:text-ink transition-colors uppercase tracking-widest"
+            >
+              Process
+            </a>
+            <a
+              href="#portfolio"
+              className="hover:text-ink transition-colors uppercase tracking-widest"
+            >
+              Portfolio
+            </a>
+            <a
+              href="#about"
+              className="hover:text-ink transition-colors uppercase tracking-widest"
+            >
+              About
+            </a>
+          </div>
           <a
             href="#contact"
             className="flex items-center gap-2 hover:text-accent transition-colors uppercase tracking-widest text-ink group"
@@ -83,8 +85,8 @@ function Hero() {
             <span className="h-px w-6 bg-accent -translate-y-[1px]"></span>
             <span>Technova Digital Studio</span>
           </div>
-          <h1 className="mb-6 text-5xl font-semibold leading-[1.1] tracking-[-0.03em] md:text-7xl lg:text-[5.5rem]">
-            SOFTWARE THAT <br /> SCALES BUSINESS.
+          <h1 className="mb-6 text-4xl font-semibold leading-[1.1] tracking-[-0.03em] sm:text-5xl md:text-7xl lg:text-[5.5rem]">
+            SOFTWARE THAT <br className="hidden sm:block" /> SCALES BUSINESS.
           </h1>
           <p className="mb-10 max-w-lg text-lg text-muted">
             We engineer high-performance mobile apps and web platforms that
@@ -126,7 +128,7 @@ function Hero() {
           delay={200}
           className="relative flex items-center justify-center lg:items-start lg:justify-end lg:pt-8"
         >
-          <div className="v-container relative h-[480px] w-full max-w-[480px] border border-white/10 bg-surface/30 backdrop-blur-sm p-8 flex flex-col font-mono text-xs overflow-hidden shadow-2xl shadow-black/50">
+          <div className="v-container relative h-[380px] sm:h-[480px] w-full max-w-[480px] border border-white/10 bg-surface/30 backdrop-blur-sm p-6 sm:p-8 flex flex-col font-mono text-xs overflow-hidden shadow-2xl shadow-black/50">
             <div
               className="absolute inset-0 bg-accent transition-opacity duration-300"
               style={{ opacity: 0.3 }}
@@ -149,7 +151,7 @@ function Hero() {
 
             <>
               <style>{`@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }`}</style>
-              <div className="v-container relative z-10 flex flex-col gap-4 text-white/60 overflow-hidden h-full font-mono text-[11px] mt-2">
+              <div className="v-container relative z-10 flex flex-col gap-4 text-white/60 overflow-hidden h-full font-mono text-[9px] sm:text-[11px] mt-2">
                 <div className="opacity-40">
                   &gt; Analyzing business requirements...{" "}
                   <span className="text-accent ml-2">DONE</span>
@@ -190,7 +192,7 @@ function TrustedBy() {
           <p className="text-center font-mono text-[10px] text-muted uppercase tracking-widest mb-8">
             Trusted by innovative companies worldwide
           </p>
-          <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-12 md:gap-24 opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70">
             <div className="text-xl font-bold tracking-tighter">ACME CORP</div>
             <div className="text-xl font-bold tracking-tight">VANGUARD</div>
             <div className="text-xl font-bold tracking-widest">NEXUS</div>
@@ -243,7 +245,7 @@ function Services() {
         <div className="flex flex-col border-t border-white/10 mt-8">
           {services.map((srv, i) => (
             <FadeIn key={srv.id} delay={i * 100}>
-              <div className="group flex flex-col md:flex-row md:items-center gap-6 md:gap-12 py-12 border-b border-white/10 transition-colors hover:bg-surface/5 cursor-pointer px-6 -mx-6">
+              <div className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-8 md:py-12 border-b border-white/10 transition-colors hover:bg-surface/5 cursor-pointer px-6 -mx-6">
                 <div className="font-mono text-sm text-white/30 w-12 shrink-0 group-hover:text-accent transition-colors">
                   0{i + 1}
                 </div>
@@ -492,9 +494,9 @@ function About() {
             delay={200}
             className="flex items-center justify-center p-8 border border-white/10 bg-surface/10 backdrop-blur-sm"
           >
-            <div className="grid grid-cols-2 w-full gap-x-8 gap-y-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-x-8 gap-y-12 sm:gap-y-16">
               <div className="flex flex-col border-l border-white/20 pl-6">
-                <span className="text-4xl font-semibold tracking-tighter">
+                <span className="text-3xl sm:text-4xl font-semibold tracking-tighter">
                   99.9%
                 </span>
                 <span className="mt-3 font-mono text-[10px] text-muted uppercase tracking-widest">
@@ -502,7 +504,7 @@ function About() {
                 </span>
               </div>
               <div className="flex flex-col border-l border-white/20 pl-6">
-                <span className="text-4xl font-semibold tracking-tighter">
+                <span className="text-3xl sm:text-4xl font-semibold tracking-tighter">
                   40%
                 </span>
                 <span className="mt-3 font-mono text-[10px] text-muted uppercase tracking-widest">
@@ -510,7 +512,7 @@ function About() {
                 </span>
               </div>
               <div className="flex flex-col border-l border-white/20 pl-6">
-                <span className="text-4xl font-semibold tracking-tighter">
+                <span className="text-3xl sm:text-4xl font-semibold tracking-tighter">
                   $50M+
                 </span>
                 <span className="mt-3 font-mono text-[10px] text-muted uppercase tracking-widest">
@@ -519,7 +521,7 @@ function About() {
               </div>
               <div className="flex flex-col border-l border-white/20 pl-6 relative">
                 <div className="absolute -left-px top-0 bottom-0 w-px bg-gradient-to-b from-accent to-transparent"></div>
-                <span className="text-4xl font-semibold tracking-tighter text-accent">
+                <span className="text-3xl sm:text-4xl font-semibold tracking-tighter text-accent">
                   100+
                 </span>
                 <span className="mt-3 font-mono text-[10px] text-muted uppercase tracking-widest">
