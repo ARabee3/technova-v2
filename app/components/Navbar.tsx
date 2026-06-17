@@ -17,9 +17,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-base/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:py-5">
-        <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm relative h-10 w-32 md:w-40" onClick={() => setIsMenuOpen(false)}>
-          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="absolute top-1/2 left-0 -translate-y-1/2 h-20 md:h-24 w-auto max-w-none object-contain transition-transform duration-500 group-hover:scale-105" priority />
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm -my-6 md:-my-8 -ml-4 md:-ml-6" onClick={() => setIsMenuOpen(false)}>
+          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-20 md:h-28 w-auto object-contain transition-transform duration-500 group-hover:scale-105" priority />
         </a>
         
         <nav className="flex items-center gap-4 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
