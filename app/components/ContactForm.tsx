@@ -65,7 +65,7 @@ export function ContactForm() {
             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-semibold tracking-tight bg-gradient-to-r from-accent to-white bg-clip-text text-transparent">TRANSMISSION SECURE</h3>
+        <h3 className="text-2xl font-semibold tracking-tight text-ink">TRANSMISSION SECURE</h3>
         <p className="text-muted text-sm max-w-xs leading-relaxed">
           Your requirements have been logged. Our engineering leads will review your brief and coordinate next steps.
         </p>
