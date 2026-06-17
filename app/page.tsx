@@ -1,55 +1,7 @@
 import Image from "next/image";
 import { FadeIn } from "./components/FadeIn";
 import { ContactForm } from "./components/ContactForm";
-
-function Navbar() {
-  return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-base/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#" className="flex items-center group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-base rounded-sm">
-          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105" priority />
-        </a>
-        <nav className="flex items-center gap-6 md:gap-10 text-[10px] md:text-xs font-mono text-muted">
-          <div className="hidden md:flex items-center gap-10">
-            <a
-              href="#services"
-              className="hover:text-ink transition-colors uppercase tracking-widest"
-            >
-              Services
-            </a>
-            <a
-              href="#process"
-              className="hover:text-ink transition-colors uppercase tracking-widest"
-            >
-              Process
-            </a>
-            <a
-              href="#portfolio"
-              className="hover:text-ink transition-colors uppercase tracking-widest"
-            >
-              Portfolio
-            </a>
-            <a
-              href="#about"
-              className="hover:text-ink transition-colors uppercase tracking-widest"
-            >
-              About
-            </a>
-          </div>
-          <a
-            href="#contact"
-            className="flex items-center gap-2 hover:text-accent transition-colors uppercase tracking-widest text-ink group"
-          >
-            <span>Contact</span>
-            <kbd className="hidden lg:inline-flex items-center justify-center h-5 w-5 rounded border border-white/20 bg-white/5 font-sans text-[9px] text-muted transition-colors group-hover:border-accent/50 group-hover:text-accent">
-              C
-            </kbd>
-          </a>
-        </nav>
-      </div>
-    </header>
-  );
-}
+import { Navbar } from "./components/Navbar";
 
 function Hero() {
   return (
@@ -75,6 +27,7 @@ function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#contact" className="group relative flex h-14 items-center justify-center gap-3 overflow-hidden border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98]">
+              <div className="absolute inset-0 w-[200%] -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100 motion-safe:group-hover:animate-[gleam_1.5s_ease-in-out_infinite] skew-x-[-20deg]"></div>
               <span className="relative z-10">START YOUR PROJECT</span>
               <kbd className="relative z-10 hidden sm:inline-flex items-center justify-center h-5 w-5 rounded border border-accent/40 bg-accent/10 font-sans text-[10px] transition-colors group-hover:border-base/40 group-hover:bg-base/10">C</kbd>
               <div className="absolute inset-0 -z-10 bg-accent/20 blur-md opacity-0 transition-opacity group-hover:opacity-100"></div>
@@ -145,8 +98,9 @@ function Hero() {
                   &gt; Building scalable infrastructure...{" "}
                   <span className="text-accent ml-2">DONE</span>
                 </div>
-                <div className="text-white/90">
+                <div className="text-white/90 flex items-center">
                   &gt; Deploying high-performance frontend...
+                  <span className="inline-block w-2 h-3 ml-1 bg-accent/80 motion-safe:animate-pulse"></span>
                 </div>
                 <div className="text-white mt-4 flex items-center gap-2 border-t border-white/10 pt-4">
                   <span className="text-accent">&gt;</span> Optimizing for
@@ -592,18 +546,18 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center gap-6">
-          <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="LinkedIn">
+        <div className="flex items-center gap-2 sm:gap-6">
+          <a href="#" className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="LinkedIn">
             <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             </svg>
           </a>
-          <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="X (Twitter)">
+          <a href="#" className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="X (Twitter)">
             <svg className="h-[15px] w-[15px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
-          <a href="#" className="text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="Facebook">
+          <a href="#" className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="Facebook">
             <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
             </svg>

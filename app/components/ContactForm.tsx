@@ -65,7 +65,7 @@ export function ContactForm() {
             <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-semibold tracking-tight">TRANSMISSION SECURE</h3>
+        <h3 className="text-2xl font-semibold tracking-tight bg-gradient-to-r from-accent to-white bg-clip-text text-transparent">TRANSMISSION SECURE</h3>
         <p className="text-muted text-sm max-w-xs leading-relaxed">
           Your requirements have been logged. Our engineering leads will review your brief and coordinate next steps.
         </p>
@@ -154,9 +154,10 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-6 h-14 w-full border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-3 group"
+        className="mt-6 relative overflow-hidden h-14 w-full border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-3 group"
       >
-        <span>REQUEST CONSULTATION</span>
+        <div className="absolute inset-0 w-[200%] -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100 motion-safe:group-hover:animate-[gleam_1.5s_ease-in-out_infinite] skew-x-[-20deg]"></div>
+        <span className="relative z-10">REQUEST CONSULTATION</span>
         <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
