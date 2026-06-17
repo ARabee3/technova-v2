@@ -104,6 +104,7 @@ export function ContactForm() {
           id="name"
           name="name"
           type="text"
+          required
           ref={nameInputRef}
           autoComplete="name"
           className={`h-12 border bg-white/5 px-4 text-ink placeholder:text-white/20 focus:bg-transparent focus:outline-none focus-visible:ring-1 transition-all ${errors.name ? 'border-red-400/50 focus:border-red-400 focus-visible:ring-red-400' : 'border-white/10 focus:border-accent focus-visible:ring-accent'}`}
@@ -123,6 +124,7 @@ export function ContactForm() {
           id="email"
           name="email"
           type="email"
+          required
           autoComplete="email"
           className={`h-12 border bg-white/5 px-4 text-ink placeholder:text-white/20 focus:bg-transparent focus:outline-none focus-visible:ring-1 transition-all ${errors.email ? 'border-red-400/50 focus:border-red-400 focus-visible:ring-red-400' : 'border-white/10 focus:border-accent focus-visible:ring-accent'}`}
           placeholder="hello@company.com"
@@ -141,6 +143,8 @@ export function ContactForm() {
           id="scope"
           name="scope"
           rows={4}
+          required
+          minLength={10}
           className={`border bg-white/5 px-4 py-4 text-ink placeholder:text-white/20 focus:bg-transparent focus:outline-none focus-visible:ring-1 transition-all resize-y min-h-[120px] max-h-[400px] font-sans text-base ${errors.scope ? 'border-red-400/50 focus:border-red-400 focus-visible:ring-red-400' : 'border-white/10 focus:border-accent focus-visible:ring-accent'}`}
           placeholder="Briefly describe what you're looking to build..."
           aria-invalid={!!errors.scope}

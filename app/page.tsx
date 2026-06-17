@@ -58,7 +58,7 @@ function Hero() {
       <div className="absolute inset-0 z-0 bg-blueprint pointer-events-none"></div>
       
       {/* Ambient Glow */}
-      <div className="ambient-glow w-[600px] h-[600px] top-0 right-0 -translate-y-1/2 translate-x-1/3"></div>
+      <div className="ambient-glow motion-safe:animate-breathe w-[600px] h-[600px] top-0 right-0 -translate-y-1/2 translate-x-1/3"></div>
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-2 lg:gap-8">
         <FadeIn className="flex flex-col justify-center">
@@ -182,10 +182,10 @@ function TrustedBy() {
             Trusted by innovative companies worldwide
           </p>
           <div className="flex overflow-hidden opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-            <div className="flex animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center">
+            <div className="flex motion-safe:animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center">
               {brands}
             </div>
-            <div className="flex animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center" aria-hidden="true">
+            <div className="flex motion-safe:animate-marquee gap-12 sm:gap-24 pr-12 sm:pr-24 min-w-max items-center" aria-hidden="true">
               {brands}
             </div>
           </div>
@@ -415,7 +415,7 @@ function Portfolio() {
       className="relative border-b border-white/10 py-24 md:py-32 overflow-hidden"
     >
       {/* Deep Atmospheric Glow */}
-      <div className="ambient-glow w-[800px] h-[800px] top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="ambient-glow motion-safe:animate-breathe w-[800px] h-[800px] top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <FadeIn className="mb-20 border-l-2 border-accent pl-6 flex flex-col md:flex-row md:items-end justify-between">
@@ -479,7 +479,7 @@ function About() {
       className="relative border-b border-white/10 py-24 md:py-32 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.03),transparent_50%)] overflow-hidden"
     >
       {/* Ambient Glow */}
-      <div className="ambient-glow w-[500px] h-[500px] bottom-0 right-0 translate-y-1/3 translate-x-1/3 opacity-20"></div>
+      <div className="ambient-glow motion-safe:animate-breathe w-[500px] h-[500px] bottom-0 right-0 translate-y-1/3 translate-x-1/3 opacity-20"></div>
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid gap-20 lg:grid-cols-2">
