@@ -523,7 +523,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-sm flex-shrink-0 grayscale contrast-200 brightness-200 opacity-90">
-            <Image src="/logo2.png" alt="Technova Logo" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover object-center" />
+            <Image src="/logo2.png" alt="Technova Logo" width={1920} height={1080} className="absolute inset-0 h-full w-full object-contain object-center" />
           </div>
           <span className="font-sans text-2xl md:text-3xl font-semibold tracking-[-0.03em] text-white/90">Technova</span>
         </div>

@@ -66,7 +66,7 @@ export function Navbar() {
                 alt="Technova Logo" 
                 width={1920} 
                 height={1080} 
-                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-105" 
                 priority 
               />
             </div>
