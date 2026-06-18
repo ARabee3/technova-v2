@@ -521,8 +521,11 @@ function Footer() {
   return (
     <footer className="relative py-8 bg-base/50">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center">
-          <Image src="/logo.png" alt="Technova Logo" width={1258} height={879} className="h-20 md:h-24 w-auto object-contain grayscale contrast-200 brightness-200 opacity-90 md:-ml-6" />
+        <div className="flex items-center gap-3">
+          <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-sm flex-shrink-0 grayscale contrast-200 brightness-200 opacity-90">
+            <Image src="/logo2.png" alt="Technova Logo" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover object-center" />
+          </div>
+          <span className="font-sans text-2xl md:text-3xl font-semibold tracking-[-0.03em] text-white/90">Technova</span>
         </div>
         
         <div className="flex items-center gap-6 font-mono text-[10px] text-muted uppercase tracking-widest">

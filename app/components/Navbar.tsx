@@ -56,18 +56,21 @@ export function Navbar() {
           {/* Logo Container - Carefully scaled and cropped to avoid layout stretching */}
           <a 
             href="#" 
-            className="group relative flex h-8 w-28 md:w-32 items-center justify-center overflow-hidden rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+            className="group relative flex items-center gap-2.5 rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
             onClick={() => setIsMenuOpen(false)}
             aria-label="Technova Home"
           >
-            <Image 
-              src="/logo.png" 
-              alt="Technova Logo" 
-              width={1258} 
-              height={879} 
-              className="absolute max-w-none w-[180px] md:w-[200px] h-auto object-contain transition-transform duration-500 group-hover:scale-105" 
-              priority 
-            />
+            <div className="relative h-7 w-7 md:h-8 md:w-8 overflow-hidden rounded-sm flex-shrink-0">
+              <Image 
+                src="/logo2.png" 
+                alt="Technova Logo" 
+                width={1920} 
+                height={1080} 
+                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                priority 
+              />
+            </div>
+            <span className="font-sans text-lg md:text-xl font-semibold tracking-[-0.03em] text-ink">Technova</span>
           </a>
           
           {/* Desktop Navigation */}
