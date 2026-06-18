@@ -7,7 +7,7 @@
   --color-muted: rgba(255, 255, 255, 0.6);
   --color-accent: #3388ff;
 
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

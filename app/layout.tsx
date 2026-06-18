@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Archivo, JetBrains_Mono } from "next/font/google";
+import { Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${sora.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="antialiased flex flex-col">{children}{/* impeccable-live-start */}
 <script src="http://localhost:8400/live.js"></script>
