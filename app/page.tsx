@@ -143,17 +143,14 @@ function TrustedBy() {
 function Services() {
   const services = [
     {
-      id: "01",
       title: "Mobile Apps",
       desc: "Native iOS and Android applications designed to engage users, build brand loyalty, and maximize retention.",
     },
     {
-      id: "02",
       title: "Web Platforms",
       desc: "Scalable SaaS platforms, e-commerce architectures, and enterprise web applications that drive your core business.",
     },
     {
-      id: "03",
       title: "UI/UX Design",
       desc: "Intuitive, beautiful interfaces rooted in user psychology that reliably convert visitors into customers.",
     },
@@ -179,18 +176,15 @@ function Services() {
 
         <div className="flex flex-col border-t border-white/10 mt-8">
           {services.map((srv, i) => (
-            <FadeIn key={srv.id} delay={i * 100}>
+            <FadeIn key={srv.title} delay={i * 100}>
               <div className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-8 md:py-12 border-b border-white/10 transition-colors hover:bg-surface/5 cursor-pointer px-6 -mx-6">
-                <div className="font-mono text-sm text-white/30 w-12 shrink-0 group-hover:text-accent transition-colors">
-                  0{i + 1}
-                </div>
-                <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-ink md:w-1/2 group-hover:translate-x-4 transition-transform duration-500">
+                <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-ink md:w-1/2 md:group-hover:translate-x-4 transition-transform duration-500">
                   {srv.title}
                 </h3>
-                <p className="text-base leading-relaxed text-muted md:w-1/2 opacity-80 group-hover:opacity-100 transition-opacity">
+                <p className="text-base leading-relaxed text-muted md:w-1/2 opacity-90 md:opacity-80 md:group-hover:opacity-100 transition-opacity">
                   {srv.desc}
                 </p>
-                <div className="hidden md:block opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-accent">
+                <div className="hidden md:block opacity-0 -translate-x-4 transition-all duration-500 md:group-hover:opacity-100 md:group-hover:translate-x-0 text-accent">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M5 12H19M19 12L12 5M19 12L12 19"

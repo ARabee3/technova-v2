@@ -46,7 +46,7 @@ export function Navbar() {
         <div 
           className={`
             pointer-events-auto flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-3 
-            rounded-full border transition-all duration-500 ease-out
+            rounded-full border transition-[background-color,border-color,box-shadow] duration-500 ease-out
             ${isScrolled 
               ? "bg-base/80 backdrop-blur-xl border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]" 
               : "bg-transparent border-transparent"
