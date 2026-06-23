@@ -27,10 +27,7 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${jetbrainsMono.variable} antialiased`}
     >
-      <body className="antialiased flex flex-col">{children}{/* impeccable-live-start */}
-<script src="http://localhost:8400/live.js"></script>
-{/* impeccable-live-end */}
-  <script dangerouslySetInnerHTML={{ __html: "console.log('%c🚀 Like what you see? We are hiring engineers at Technova.', 'color: #3388ff; font-size: 14px; font-weight: bold; font-family: monospace;');" }} />
+      <body className="antialiased flex flex-col">{children}  <script dangerouslySetInnerHTML={{ __html: "console.log('%c🚀 Like what you see? We are hiring engineers at Technova.', 'color: #3388ff; font-size: 14px; font-weight: bold; font-family: monospace;');" }} />
 </body>
     </html>
   );

@@ -8,7 +8,7 @@ function Hero() {
     <section className="relative overflow-hidden border-b border-white/10 pt-24 pb-32">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 bg-blueprint pointer-events-none"></div>
-      
+
       {/* Ambient Glow */}
       <div className="ambient-glow motion-safe:animate-breathe w-[600px] h-[600px] top-0 right-0 -translate-y-1/2 translate-x-1/3"></div>
 
@@ -26,22 +26,30 @@ function Hero() {
             drive revenue, streamline operations, and elevate your brand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#contact" className="group relative flex h-14 items-center justify-center gap-3 overflow-hidden border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98]">
+            <a
+              href="#contact"
+              className="group relative flex h-14 items-center justify-center gap-3 overflow-hidden border border-accent bg-transparent px-8 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-base active:scale-[0.98]"
+            >
               <div className="absolute inset-0 w-[200%] -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100 motion-safe:group-hover:animate-[gleam_1.5s_ease-in-out_infinite] skew-x-[-20deg]"></div>
               <span className="relative z-10">START YOUR PROJECT</span>
-              <kbd className="relative z-10 hidden sm:inline-flex items-center justify-center h-5 w-5 rounded border border-accent/40 bg-accent/10 font-sans text-[10px] transition-colors group-hover:border-base/40 group-hover:bg-base/10">C</kbd>
+              <kbd className="relative z-10 hidden sm:inline-flex items-center justify-center h-5 w-5 rounded border border-accent/40 bg-accent/10 font-sans text-[10px] transition-colors group-hover:border-base/40 group-hover:bg-base/10">
+                C
+              </kbd>
               <div className="absolute inset-0 -z-10 bg-accent/20 blur-md opacity-0 transition-opacity group-hover:opacity-100"></div>
             </a>
-            <a href="#portfolio" className="flex h-14 items-center justify-center px-8 text-sm font-medium text-muted transition-all hover:text-ink active:scale-[0.98]">
+            <a
+              href="#portfolio"
+              className="flex h-14 items-center justify-center px-8 text-sm font-medium text-muted transition-all hover:text-ink active:scale-[0.98]"
+            >
               VIEW CASE STUDIES
             </a>
           </div>
 
           <div className="mt-24 border-t border-white/10 pt-6">
-            <h3 className="mb-4 font-mono text-[10px] text-muted uppercase tracking-widest">
+            <h3 className="mb-6 border-l-2 border-accent pl-6 text-xl font-semibold tracking-tight md:text-2xl uppercase">
               Our Commitment
             </h3>
-            <ul className="flex flex-col gap-3 font-mono text-xs uppercase tracking-wider">
+            <ul className="flex flex-col gap-3 font-mono text-xs uppercase tracking-wider pl-8">
               <li className="flex items-center gap-4">
                 <span className="text-white/20">01</span> Fast Time-to-Market
               </li>
@@ -121,14 +129,17 @@ function Hero() {
 
 function TrustedBy() {
   return (
-    <section className="border-b border-white/10 py-12 bg-surface/5">
-      <div className="mx-auto max-w-7xl px-6 flex flex-col items-center gap-8">
-        <FadeIn>
-          <p className="font-mono text-[10px] text-muted uppercase tracking-widest text-center">
-            Trusted by innovative companies worldwide
-          </p>
+    <section className="border-b border-white/10 py-16 bg-surface/5">
+      <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+        <FadeIn className="border-l-2 border-accent pl-6 shrink-0">
+          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl uppercase">
+            Trusted By
+          </h2>
         </FadeIn>
-        <FadeIn delay={100} className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70 w-full max-w-4xl">
+        <FadeIn
+          delay={100}
+          className="flex flex-wrap items-center gap-8 md:gap-12 opacity-40 mix-blend-screen transition-opacity duration-500 hover:opacity-70 md:pl-6"
+        >
           <span className="text-xl font-bold tracking-tighter">ACME CORP</span>
           <span className="text-xl font-bold tracking-tight">VANGUARD</span>
           <span className="text-xl font-bold tracking-widest">NEXUS</span>
@@ -162,22 +173,18 @@ function Services() {
       className="relative border-b border-white/10 py-24 md:py-32"
     >
       <div className="mx-auto max-w-7xl px-6">
-        <FadeIn className="mb-20 flex flex-col md:flex-row md:items-end md:justify-between border-l-2 border-accent pl-6">
-          <div>
+        <FadeIn className="mb-20 flex flex-col md:flex-row md:items-end gap-4 md:gap-12 border-l-2 border-accent pl-6">
+          <div className="md:w-1/2 flex-shrink-0">
             <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
               CORE SERVICES
             </h2>
           </div>
-          <p className="mt-6 max-w-md text-sm leading-relaxed text-muted md:mt-0">
-            We partner with ambitious businesses to engineer custom digital
-            solutions that solve real problems and unlock new revenue streams.
-          </p>
         </FadeIn>
 
         <div className="flex flex-col border-t border-white/10 mt-8">
           {services.map((srv, i) => (
             <FadeIn key={srv.title} delay={i * 100}>
-              <div className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-8 md:py-12 border-b border-white/10 transition-colors hover:bg-surface/5 cursor-pointer px-6 -mx-6">
+              <div className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-12 py-8 md:py-12 border-b border-white/10 transition-colors hover:bg-surface/5 cursor-pointer px-6 -mx-6 md:mx-0">
                 <h3 className="text-3xl md:text-5xl font-medium tracking-tight text-ink md:w-1/2 md:group-hover:translate-x-4 transition-transform duration-500">
                   {srv.title}
                 </h3>
@@ -304,9 +311,11 @@ function Portfolio() {
   ];
 
   // Helper function to render a single work card
-  const renderWorkCard = (work: typeof works[0], aspectClass: string) => (
+  const renderWorkCard = (work: (typeof works)[0], aspectClass: string) => (
     <div className="group relative flex flex-col gap-6 cursor-pointer h-full">
-      <div className={`relative w-full overflow-hidden border border-white/10 bg-surface/20 transition-all duration-700 group-hover:border-accent/40 group-hover:shadow-[0_0_30px_rgba(0,255,255,0.1)] ${aspectClass}`}>
+      <div
+        className={`relative w-full overflow-hidden border border-white/10 bg-surface/20 transition-all duration-700 group-hover:border-accent/40 group-hover:shadow-[0_0_30px_rgba(0,255,255,0.1)] ${aspectClass}`}
+      >
         <Image
           src={work.image}
           alt={work.title}
@@ -355,7 +364,7 @@ function Portfolio() {
     >
       {/* Deep Atmospheric Glow */}
       <div className="ambient-glow motion-safe:animate-breathe w-[800px] h-[800px] top-1/2 left-0 -translate-x-1/2 -translate-y-1/2"></div>
-      
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <FadeIn className="mb-20 border-l-2 border-accent pl-6 flex flex-col md:flex-row md:items-end justify-between">
           <div>
@@ -363,7 +372,10 @@ function Portfolio() {
               FEATURED CASE STUDIES
             </h2>
           </div>
-          <a href="#portfolio" className="hidden md:flex items-center gap-2 text-sm font-medium text-accent hover:text-white transition-colors mt-6 md:mt-0 group">
+          <a
+            href="#portfolio"
+            className="hidden md:flex items-center gap-2 text-sm font-medium text-accent hover:text-white transition-colors mt-6 md:mt-0 group"
+          >
             <span className="relative">
               VIEW ALL WORK
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -383,7 +395,7 @@ function Portfolio() {
             </svg>
           </a>
         </FadeIn>
-        
+
         {/* Asymmetric Scattered Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 lg:gap-12 items-center">
           {/* Work 0: Massive Feature (Spans 8 cols) */}
@@ -396,14 +408,14 @@ function Portfolio() {
             {renderWorkCard(works[1], "aspect-[4/3] md:aspect-[3/4]")}
           </FadeIn>
 
-          {/* Work 2: Square/Landscape (Spans 5 cols) */}
-          <FadeIn delay={300} className="md:col-span-5">
-            {renderWorkCard(works[2], "aspect-[4/3] md:aspect-square")}
+          {/* Work 2: Portrait Offset (Spans 4 cols) */}
+          <FadeIn delay={300} className="md:col-span-4">
+            {renderWorkCard(works[2], "aspect-[4/3] md:aspect-[3/4]")}
           </FadeIn>
 
-          {/* Work 3: Wide Layout (Spans 7 cols) */}
-          <FadeIn delay={450} className="md:col-span-7">
-            {renderWorkCard(works[3], "aspect-[4/3] md:aspect-[16/9]")}
+          {/* Work 3: Massive Feature (Spans 8 cols) */}
+          <FadeIn delay={450} className="md:col-span-8">
+            {renderWorkCard(works[3], "aspect-[4/3] md:aspect-[21/9]")}
           </FadeIn>
         </div>
       </div>
@@ -488,7 +500,10 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative py-24 md:py-32 border-b border-white/10">
+    <section
+      id="contact"
+      className="relative py-24 md:py-32 border-b border-white/10"
+    >
       <div className="mx-auto max-w-7xl px-6 grid gap-16 lg:grid-cols-2">
         <FadeIn className="border-l-2 border-accent pl-6 flex flex-col justify-center">
           <div>
@@ -517,11 +532,19 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="relative h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-sm flex-shrink-0 grayscale contrast-200 brightness-200 opacity-90">
-            <Image src="/logo2.png" alt="Technova Logo" width={1920} height={1080} className="absolute inset-0 h-full w-full object-contain object-center" />
+            <Image
+              src="/logo2.png"
+              alt="Technova Logo"
+              width={1920}
+              height={1080}
+              className="absolute inset-0 h-full w-full object-contain object-center"
+            />
           </div>
-          <span className="font-sans text-2xl md:text-3xl font-semibold tracking-[-0.03em] text-white/90">Technova</span>
+          <span className="font-sans text-2xl md:text-3xl font-semibold tracking-[-0.03em] text-white/90">
+            Technova
+          </span>
         </div>
-        
+
         <div className="flex items-center gap-6 font-mono text-[10px] text-muted uppercase tracking-widest">
           <div className="flex items-center gap-4 border-r border-white/10 pr-6 hidden sm:flex">
             <span className="text-white/40">LOC</span> EGYPT
@@ -535,19 +558,50 @@ function Footer() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-6">
-          <a href="#" className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="LinkedIn">
-            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <a
+            href="#"
+            className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]"
+            aria-label="LinkedIn"
+          >
+            <svg
+              className="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             </svg>
           </a>
-          <a href="#" className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="X (Twitter)">
-            <svg className="h-[15px] w-[15px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          <a
+            href="#"
+            className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]"
+            aria-label="X (Twitter)"
+          >
+            <svg
+              className="h-[15px] w-[15px]"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </a>
-          <a href="#" className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]" aria-label="Facebook">
-            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+          <a
+            href="#"
+            className="p-3 text-muted hover:text-accent transition-colors active:scale-[0.98]"
+            aria-label="Facebook"
+          >
+            <svg
+              className="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                clipRule="evenodd"
+              />
             </svg>
           </a>
         </div>
@@ -561,7 +615,12 @@ export default function Home() {
     <div className="relative min-h-screen flex flex-col selection:bg-accent selection:text-base bg-base text-ink font-sans">
       <svg className="pointer-events-none fixed inset-0 z-[100] h-full w-full opacity-[0.04] mix-blend-overlay">
         <filter id="noise">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
         </filter>
         <rect width="100%" height="100%" filter="url(#noise)" />
       </svg>
